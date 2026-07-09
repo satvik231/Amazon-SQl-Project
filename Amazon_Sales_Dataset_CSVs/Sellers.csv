@@ -1,26 +1,26 @@
-Seller_id,seller_name
-1,TechNova Retail
-2,UrbanThreads Co
-3,HomeEssentials Inc
-4,GlowBeauty Supplies
-5,PeakOutdoor Gear
-6,FunTime Toys LLC
-7,PantryFresh Foods
-8,OfficePro Supplies
-9,PawsomePet Co
-10,AutoGear Direct
-11,WellnessFirst Health
-12,ModernLiving Furniture
-13,StrideFootwear Co
-14,LuxeJewels Studio
-15,PrimeGadgets Store
-16,BookNook Publishers
-17,FitLife Equipment
-18,CozyHome Textiles
-19,SwiftShip Electronics
-20,EverGreen Organics
-21,MetroStyle Apparel
-22,ClassicRead Books
-23,SunriseKitchenware
-24,TrailBlazer Outfitters
-25,SilverLine Accessories
+seller_id,seller_name,origin
+1,TechNova Retail,USA
+2,UrbanThreads Co,UK
+3,HomeEssentials Inc,Canada
+4,GlowBeauty Supplies,South Korea
+5,PeakOutdoor Gear,USA
+6,FunTime Toys LLC,China
+7,PantryFresh Foods,India
+8,OfficePro Supplies,Germany
+9,PawsomePet Co,Australia
+10,AutoGear Direct,Japan
+11,WellnessFirst Health,Switzerland
+12,ModernLiving Furniture,Sweden
+13,StrideFootwear Co,Italy
+14,LuxeJewels Studio,France
+15,PrimeGadgets Store,Singapore
+16,BookNook Publishers,UK
+17,FitLife Equipment,USA
+18,CozyHome Textiles,Turkey
+19,SwiftShip Electronics,Taiwan
+20,EverGreen Organics,New Zealand
+21,MetroStyle Apparel,Italy
+22,ClassicRead Books,USA
+23,SunriseKitchenware,Japan
+24,TrailBlazer Outfitters,Canada
+25,SilverLine Accessories,UAE

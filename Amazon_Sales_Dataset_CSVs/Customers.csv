@@ -1,4 +1,4 @@
-Customer_id,f_name,l_name,state,address
+customer_id,first_name,last_name,state,address
 1,Nancy,Jones,Indiana,3999 Elm St
 2,Kevin,Young,Ohio,8934 Cedar Rd
 3,George,Torres,Maryland,7844 Pine Ln

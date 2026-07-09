@@ -1,4 +1,4 @@
-Product_id,product_name,price,cogs,category_id
+product_id,product_name,price,cogs,category_id
 1,Wireless Earbuds,290.63,132.96,1
 2,Bluetooth Speaker,129.56,66.98,1
 3,4K Streaming Stick,333.52,217.79,1
@@ -25,7 +25,7 @@ Product_id,product_name,price,cogs,category_id
 24,Winter Puffer Jacket,52.64,28.08,3
 25,Yoga Leggings,288.97,161.66,3
 26,Stainless Steel Knife Set,171.62,88.02,4
-27,Non-Stick Frying Pan,126.0,92.11,4
+27,Non-Stick Frying Pan,126,92.11,4
 28,Air Fryer 5L,294.43,186.3,4
 29,Electric Kettle,83.64,55.93,4
 30,Memory Foam Pillow,80.22,45.23,4
