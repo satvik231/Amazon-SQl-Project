@@ -1,0 +1,121 @@
+Customer_id,f_name,l_name,state,address
+1,Nancy,Jones,Indiana,3999 Elm St
+2,Kevin,Young,Ohio,8934 Cedar Rd
+3,George,Torres,Maryland,7844 Pine Ln
+4,Donald,Clark,Ohio,1645 Oak Ave
+5,Kevin,Ramirez,Virginia,7039 Main St
+6,Sandra,Brown,Florida,1093 Main St
+7,George,Perez,Florida,4173 Pine Ln
+8,Richard,Wright,Massachusetts,2396 Main St
+9,Barbara,Moore,Massachusetts,4192 Meadow Ln
+10,John,Lewis,Missouri,1704 Maple St
+11,Dorothy,Wright,California,1628 Hilltop Dr
+12,Edward,Thomas,Pennsylvania,6758 Highland Dr
+13,Donald,Wilson,Washington,1060 Cedar Rd
+14,Matthew,Smith,Washington,4445 Hilltop Dr
+15,Sandra,Jackson,Arizona,9205 Lakeview Dr
+16,Amanda,Young,Illinois,3211 Elm St
+17,Susan,Brown,Maryland,8983 Maple St
+18,Melissa,Lee,Texas,921 Willow Way
+19,Donald,Allen,Indiana,2679 Maple St
+20,Steven,Garcia,Pennsylvania,1222 Willow Way
+21,John,Thomas,Washington,2064 Hilltop Dr
+22,Andrew,Thomas,Maryland,9840 Maple St
+23,Michelle,Garcia,Arizona,9662 Willow Way
+24,Kimberly,Lee,North Carolina,3446 Lakeview Dr
+25,Amanda,Lee,Georgia,4451 Main St
+26,David,Martin,Massachusetts,5280 Hilltop Dr
+27,Edward,Jones,California,7608 Willow Way
+28,Andrew,Miller,New York,8908 Pine Ln
+29,Steven,Taylor,Illinois,5818 Hilltop Dr
+30,John,Thomas,Virginia,4769 Cedar Rd
+31,Mark,Wright,Michigan,8766 Maple St
+32,Kevin,Scott,Michigan,1797 Hilltop Dr
+33,David,Taylor,Florida,1853 Park Ave
+34,Emily,Martinez,North Carolina,4716 Willow Way
+35,Susan,Perez,Ohio,4425 Birch Ave
+36,Ashley,Taylor,Texas,1612 Lakeview Dr
+37,Margaret,Moore,Texas,158 Sunset Blvd
+38,Deborah,Rodriguez,North Carolina,2747 Park Ave
+39,Mark,Scott,Arizona,9289 Maple St
+40,Linda,Jones,Illinois,9038 Maple St
+41,Lisa,Nguyen,Missouri,2526 Main St
+42,David,Williams,Michigan,6074 Hilltop Dr
+43,Robert,Thompson,Ohio,4188 Lakeview Dr
+44,Michael,Thompson,Missouri,6758 Willow Way
+45,Melissa,Martinez,Georgia,2762 River Rd
+46,Barbara,Clark,California,3038 Park Ave
+47,Nancy,Clark,Georgia,4471 Cedar Rd
+48,Brian,Miller,Washington,734 Meadow Ln
+49,Donald,Anderson,Ohio,7641 Sunset Blvd
+50,Karen,Anderson,Georgia,487 Lakeview Dr
+51,Richard,Sanchez,New Jersey,4664 Meadow Ln
+52,John,Moore,Virginia,8446 Main St
+53,Carol,Wright,New Jersey,552 Oak Ave
+54,Thomas,Lopez,Maryland,4449 Maple St
+55,Michael,Hill,Arizona,5763 Park Ave
+56,Christopher,Ramirez,Colorado,8479 Oak Ave
+57,Matthew,Torres,Ohio,4273 Maple St
+58,Amanda,Ramirez,California,8618 Hilltop Dr
+59,Paul,Gonzalez,Virginia,7166 Oak Ave
+60,Kevin,Perez,Colorado,5243 Lakeview Dr
+61,Linda,Martin,Indiana,5167 Lakeview Dr
+62,Anthony,Lee,Washington,4944 Birch Ave
+63,David,Gonzalez,Arizona,6311 Lakeview Dr
+64,Melissa,Lopez,Colorado,9424 Elm St
+65,Betty,Scott,California,5078 Elm St
+66,Susan,Ramirez,Maryland,5379 Highland Dr
+67,Mark,Lewis,Ohio,8475 Highland Dr
+68,Melissa,Hernandez,New York,4749 Birch Ave
+69,Kevin,Flores,New Jersey,1630 Meadow Ln
+70,Edward,Thomas,Michigan,3780 River Rd
+71,Richard,Martinez,California,857 Pine Ln
+72,Donald,Flores,New York,7561 Main St
+73,Kenneth,Torres,Ohio,6391 Highland Dr
+74,Betty,Thomas,Illinois,190 Hilltop Dr
+75,Edward,Miller,Arizona,3685 Cedar Rd
+76,Brian,King,Massachusetts,922 Birch Ave
+77,Jessica,Davis,Massachusetts,2284 River Rd
+78,Sandra,King,Missouri,9855 Sunset Blvd
+79,Edward,Lewis,Colorado,8370 Main St
+80,Emily,Lewis,Pennsylvania,7877 Highland Dr
+81,Thomas,Thomas,North Carolina,8640 Highland Dr
+82,Kenneth,Thomas,North Carolina,7306 Oak Ave
+83,Amanda,Jackson,Georgia,4551 Sunset Blvd
+84,Christopher,Wright,New York,2367 Cedar Rd
+85,Joseph,Harris,Illinois,3605 Oak Ave
+86,Anthony,Clark,New Jersey,8990 Highland Dr
+87,Anthony,Brown,Ohio,6983 Main St
+88,Deborah,Nguyen,California,9532 Main St
+89,Donald,Smith,Virginia,4992 River Rd
+90,Matthew,Clark,Missouri,9047 River Rd
+91,Joshua,Anderson,Tennessee,3695 Elm St
+92,Margaret,Young,California,6471 Sunset Blvd
+93,Kevin,Sanchez,Pennsylvania,7757 Hilltop Dr
+94,David,Flores,Missouri,541 Hilltop Dr
+95,Betty,Nguyen,Maryland,544 Oak Ave
+96,Dorothy,Ramirez,Illinois,7664 Cedar Rd
+97,Patricia,Taylor,Washington,5463 Pine Ln
+98,Sandra,Lee,New Jersey,6311 Elm St
+99,Edward,Clark,North Carolina,1441 Highland Dr
+100,Mary,Wright,Texas,5833 Pine Ln
+101,Dorothy,Jones,Texas,608 Pine Ln
+102,Richard,Johnson,Colorado,2596 Pine Ln
+103,David,Walker,Florida,9340 Pine Ln
+104,Sandra,Taylor,Virginia,2849 Willow Way
+105,Joshua,Davis,Pennsylvania,5196 Oak Ave
+106,Donna,Johnson,Michigan,9533 Lakeview Dr
+107,Matthew,Sanchez,Ohio,1345 Willow Way
+108,Brian,Thomas,Florida,5041 Meadow Ln
+109,Carol,Hill,Florida,9372 River Rd
+110,Robert,Thompson,Missouri,7118 Lakeview Dr
+111,Lisa,Jones,Indiana,5690 Maple St
+112,Anthony,Young,Florida,7202 Sunset Blvd
+113,Kenneth,Robinson,Illinois,7235 Cedar Rd
+114,George,King,North Carolina,8917 River Rd
+115,Donald,Robinson,Arizona,9807 Elm St
+116,Christopher,Thomas,New York,4669 Hilltop Dr
+117,Mark,Thomas,Massachusetts,9436 Willow Way
+118,Kevin,Harris,New Jersey,570 Highland Dr
+119,Christopher,Lopez,Tennessee,3575 Sunset Blvd
+120,Thomas,Perez,North Carolina,9867 Park Ave
