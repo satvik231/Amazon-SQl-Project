@@ -192,3 +192,95 @@ LEFT JOIN payments p
 ON p.order_id = o.order_id
 GROUP BY 1;
 
+/*
+11. Top Performing Sellers
+Find the top 5 sellers based on total sales value.
+Challenge: Include both successful and failed orders, and display their percentage of successful orders.
+*/
+WITH sales AS (
+SELECT
+s.seller_id,
+s.seller_name,
+ROUND(SUM(oi.total_price)) AS total_sale
+FROM orders o
+LEFT JOIN sellers s
+ON s.seller_id = o.seller_id
+LEFT JOIN order_items oi
+ON oi.order_id = o.order_id
+GROUP BY 1,2
+ORDER BY 3 DESC
+LIMIT 5
+),
+sale_status AS(
+SELECT 
+o.seller_id,
+ts.seller_name,
+o.order_status,
+COUNT(*) AS status_count
+FROM orders o 
+LEFT JOIN sales ts
+ON ts.seller_id = o.seller_id
+WHERE o.order_status NOT IN('Pending','Returned','Refunded') AND seller_name IS NOT NULL
+GROUP BY 1,2,3
+)
+SELECT 
+seller_id,
+seller_name,
+SUM(CASE WHEN order_status = 'Completed' THEN status_count ELSE 0 END) AS completed_orders,
+SUM(CASE WHEN order_status = 'Cancelled' THEN status_count ELSE 0 END) AS Cancelled_orders,
+SUM(status_count) AS total_sales,
+ROUND(SUM(CASE WHEN order_status = 'Completed' THEN status_count ELSE 0 END)::numeric/SUM(status_count)::numeric * 100) AS Completed_percentage,
+ROUND(SUM(CASE WHEN order_status = 'Cancelled' THEN status_count ELSE 0 END)::numeric/SUM(status_count)::numeric * 100) AS Cancelled_percentage
+FROM sale_status
+GROUP BY 1,2;
+
+/*
+12. Product Profit Margin
+Calculate the profit margin for each product (difference between price and cost of goods sold).
+Challenge: Rank products by their profit margin, showing highest to lowest.
+*/
+
+SELECT 
+p.product_id,
+p.product_name,
+ROUND(SUM(oi.total_price - (p.cogs*oi.quantity))) AS Margin
+FROM order_items oi
+LEFT JOIN products p
+ON oi.product_id = p.product_id
+GROUP BY 1,2
+ORDER BY 3 DESC;
+
+/*
+13. Most Returned Products
+Query the top 10 products by the number of returns.
+Challenge: Display the return rate as a percentage of total units sold for each product.
+*/
+
+SELECT
+p.product_id,
+p.product_name,
+COUNT(*) AS total_unit_sold,
+SUM(CASE WHEN order_status = 'Returned' THEN 1 ELSE 0 END) AS total_returned,
+ROUND(SUM(CASE WHEN order_status = 'Returned' THEN 1 ELSE 0 END)::numeric/COUNT(*)::numeric * 100) AS Percentage
+FROM order_items oi
+LEFT JOIN products p
+ON p.product_id = oi.product_id
+LEFT JOIN orders o
+ON o.order_id = oi.order_id
+GROUP BY 1,2
+
+/*
+15. Inactive Sellers
+Identify sellers who haven't made any sales in the last 6 months.
+Challenge: Show the last sale date and total sales from those sellers.
+*/
+
+SELECT
+s.seller_id,
+s.seller_name,
+MAX(o.order_date) AS OrderDate
+FROM orders o
+LEFT JOIN sellers s
+ON s.seller_id = o.seller_id
+WHERE OrderDate < CURRENT_DATE - INTERVAL '6 months'
+GROUP BY 1,2;
