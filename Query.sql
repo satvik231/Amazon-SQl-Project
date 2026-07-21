@@ -274,13 +274,19 @@ GROUP BY 1,2
 Identify sellers who haven't made any sales in the last 6 months.
 Challenge: Show the last sale date and total sales from those sellers.
 */
-
-SELECT
-s.seller_id,
-s.seller_name,
-MAX(o.order_date) AS OrderDate
-FROM orders o
-LEFT JOIN sellers s
-ON s.seller_id = o.seller_id
-WHERE OrderDate < CURRENT_DATE - INTERVAL '6 months'
-GROUP BY 1,2;
+WITH cte AS (
+SELECT *
+FROM sellers
+WHERE seller_id NOT IN (SELECT seller_id FROM orders WHERE order_date >= CURRENT_DATE - INTERVAL '6 months')
+)
+SELECT 
+o.seller_id,
+MAX(o.order_date),
+MAX(oi.total_price)
+FROM orders AS o
+LEFT JOIN cte
+ON cte.seller_id = o.seller_id
+LEFT JOIN order_items AS oi
+ON oi.order_id = o.order_id
+GROUP BY 1
+ORDER BY 1;
