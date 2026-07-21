@@ -290,3 +290,21 @@ LEFT JOIN order_items AS oi
 ON oi.order_id = o.order_id
 GROUP BY 1
 ORDER BY 1;
+
+/*
+16. Identify Customers into Returning or New
+If the customer has done more than 5 returns, categorize them as Returning; otherwise, New.
+Challenge: List customer ID, name, total orders, total returns.
+*/
+
+SELECT
+c.customer_id,
+CONCAT(c.first_name,' ',c.last_name) AS Name,
+COUNT(o.order_id) AS total_orders,
+SUM(CASE WHEN order_status = 'Returned' THEN 1 ELSE 0 END) AS total_returns
+FROM orders o 
+LEFT JOIN customers c
+ON c.customer_id = o.customer_id
+GROUP BY 1,2
+HAVING SUM(CASE WHEN order_status = 'Returned' THEN 1 ELSE 0 END) <> 0
+ORDER BY 1;
