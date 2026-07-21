@@ -101,3 +101,94 @@ WHERE o.customer_id IS NULL
 -- 6. Best-Selling Categories by State
 -- Identify the best-selling product category for each state.
 -- Challenge: Include the total sales for that category within each state.
+
+WITH ranking AS
+(
+SELECT 
+ct.state,
+c.category_name,
+SUM(oi.total_price),
+RANK() OVER(PARTITION BY ct.state ORDER BY SUM(oi.total_price) ASC) as rank
+FROM orders o
+LEFT JOIN order_items oi
+ON o.order_id = oi.order_id
+LEFT JOIN products p
+ON p.product_id = oi.product_id
+LEFT JOIN category c
+ON c.category_id = p.category_id
+LEFT JOIN customers ct
+ON ct.customer_id = o.customer_id
+GROUP BY 1,2
+)
+SELECT *
+FROM ranking
+WHERE rank = 1;
+
+/*
+7. Customer Lifetime Value (CLTV)
+Calculate the total value of orders placed by each customer over their lifetime.
+Challenge: Rank customers based on their CLTV.
+*/
+
+SELECT 
+o.customer_id,
+c.first_name,
+ROUND(SUM(oi.total_price)) AS CLTV,
+DENSE_RANK() OVER(ORDER BY SUM(oi.total_price)DESC) AS rank
+FROM orders o
+LEFT JOIN order_items oi
+ON o.order_id = oi.order_id
+LEFT JOIN customers c
+ON c.customer_id = o.customer_id
+GROUP BY 1,2;
+
+/*
+8. Inventory Stock Alerts
+Query products with stock levels below a certain threshold (e.g., less than 10 units).
+Challenge: Include last restock date and warehouse information.
+*/
+
+SELECT 
+i.inventory_id,
+p.product_name,
+i.stock,
+i.last_stock_date,
+i.warehouse_id
+FROM inventory i 
+LEFT JOIN products p
+ON p.product_id = i.product_id
+WHERE stock < 10;
+
+/*
+9. Shipping Delays
+Identify orders where the shipping date is later than 2 days after the order date.
+Challenge: Include customer, order details, and delivery provider.
+*/
+
+SELECT 
+c.first_name,
+order_date,
+shipping_date,
+delivery_status
+FROM shipping s
+LEFT JOIN orders o 
+ON o.order_id = s.order_id
+LEFT JOIN customers c
+ON c.customer_id = o.customer_id
+WHERE shipping_date > order_date + INTERVAL '2 days';
+
+/*
+10. Payment Success Rate
+Calculate the percentage of successful payments across all orders.
+Challenge: Include breakdowns by payment status (e.g., failed, pending).
+*/
+
+SELECT 
+p.payment_status,
+COUNT(*) as total_count,
+ROUND(COUNT(*)::numeric/(SELECT COUNT(*) FROM payments)::numeric * 100) AS Average
+FROM orders o
+LEFT JOIN payments p
+ON p.order_id = o.order_id
+GROUP BY 1;
+
